@@ -1,0 +1,170 @@
+git config --global user.name "Dipen Parmar"
+git config --global user.email "dipenparmar12@gmail.com"
+
+git init 
+	# initialization of repo 1st commad
+
+git remote add  origin https://github.com/dipenparmar12/Useful-Resources-By-Dipen.git
+	# our local repo are connected to online repo 
+
+git pull origin master
+	# fecting all data to local repo from remote repo
+git clone git@github.com:username/repo.git
+	
+git status 
+	# know , which files are modified and created 
+
+git add 'file_name.type'
+	# add file to project index
+
+git add -A
+	# add all available files to index or repo
+
+git clear 
+	# clear commad line screen 
+
+git commit -m ' Description,about what was chendged from previous commit '
+	#commit our work that uploaded to remote repo
+	
+
+git commit -a -m 'Descriptive Message'
+	# here -a means add files to index  
+
+
+git log 
+	# view all commited oprations with date and user
+
+git branch branch_name
+	# create new branch
+
+git chckout branch_name
+	# swich current branch to next_branch
+
+ls 
+	# view folders and files are in our repo
+
+git merge branch_name_master
+	# now all files added to currenct branch from name_branch
+
+cat file_name.type
+	# view file in currenct terminal 
+
+
+ssh-keygen
+	# generat the ssh key 
+	# add key in online github.com to ssh and keys option 
+
+cat file_path/file_name.type
+	# view file in terminal
+
+git push origin branch_name
+	# to add branch to remote repo
+
+git checkout hex_cod_8_digit file_name.type
+	# return roll back to privieous stage
+
+
+git clean -n 
+    # show file that untracked and want to remove from project
+    # -nd or -n -d 
+    # here d means directory too
+
+git clean -f
+    # direct delete files that are untracked or not added into project 
+    # -fd or -f -d 
+    # here d means directory too
+
+
+
+
+
+git branch
+    # shows local branchss
+git branch -r 
+    # shows remote branchs 
+git branch -a
+    #shows both remote and local branchs 
+   
+
+
+git push origin --delete <your_branch>
+    #for deleting remote branch
+
+git branch -D <branch_name>
+    # for local branch
+
+git reset <file>
+git reset 
+    # You can undo git add before commit with (remove files from commit stage
+
+git remote -v
+    # show remote repo url 
+
+git remote remove origin
+    # remove remote url on local repo 
+    # after git remote -v not found any url 
+
+git remote add origin github_repo_url.git
+    # connect local repo to remote repo
+
+git push -u origin master 
+    # send or update local files to remote repo
+
+
+
+
+
+75
+down vote
+accepted
+
+If you are at the root of your working directory, you can do 
+	git checkout -- . 
+to check-out all files in the current HEAD and replace your local files.
+
+You can also do git reset --hard to reset your working directory and replace all changes (including the index).
+
+
+
+_________________________
+
+git clean -n
+    # show file that untracked and want to remove from project
+
+git clean -f
+    # direct delete files that are untracked or not added into project 
+
+
+
+7240
+down vote
+accepted
+As per the Git Documentation git clean
+
+Remove untracked files from the working tree
+
+Step 1 is to show what will be deleted by using the -n option:
+
+git clean -n
+
+Clean Step - beware: this will delete files:
+
+git clean -f
+
+(
+To remove directories, run git clean -f -d or git clean -fd
+To remove ignored files, run git clean -f -X or git clean -fX
+To remove ignored and non-ignored files, run git clean -f -x or git clean -fx
+Note the case difference on the X for the two latter commands.
+
+If clean.requireForce is set to "true" (the default) in your configuration, one needs to specify -f otherwise nothing will actually happen.
+
+Again see the git-clean docs for more information.
+)
+
+
+
+
+
+
+
